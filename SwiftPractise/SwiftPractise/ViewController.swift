@@ -39,10 +39,11 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
     
     // MARK: - button add target
     lazy var pushButton: UIButton = {
-        let button = UIButton.init(type: .contactAdd)
-        button.frame = CGRect.init(x: 0, y: 50, width: 100, height: 100)
+        let button = UIButton.init(type: .custom)
+        button.frame = CGRect.init(x: self.view.frame.size.width - 100, y: 50, width: 100, height: 100)
         button.addTarget(self, action: #selector(self.pushViewController), for: .touchUpInside)
-        
+        button.setTitle("Add", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
         return button;
     }()
 

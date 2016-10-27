@@ -10,10 +10,30 @@ import UIKit
 
 class WebDisplayViewController: ViewController {
 
+    // MARK: - button add target
+    lazy var backButton: UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.frame = CGRect.init(x: 0, y: 50, width: 100, height: 100)
+        button.addTarget(self, action: #selector(self.backViewController), for: .touchUpInside)
+        button.setTitle("Back", for: .normal)
+        button.setTitleColor(UIColor.blue, for: .normal)
+        return button;
+    }()
+
+    // MARK: -Events
+    func backViewController() {
+        
+        self.dismiss(animated: true) { 
+            
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.view.addSubview(self.backButton)
         
         let url = URL.init(string: "https://baidu.com")
         

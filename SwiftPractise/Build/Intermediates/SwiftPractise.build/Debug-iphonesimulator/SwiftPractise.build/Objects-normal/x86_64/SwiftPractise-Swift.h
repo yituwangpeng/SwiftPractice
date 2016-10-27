@@ -156,6 +156,8 @@ SWIFT_CLASS("_TtC13SwiftPractise14ViewController")
 
 SWIFT_CLASS("_TtC13SwiftPractise24WebDisplayViewController")
 @interface WebDisplayViewController : ViewController
+@property (nonatomic, strong) UIButton * _Nonnull backButton;
+- (void)backViewController;
 - (void)viewDidLoad;
 - (void)didReceiveMemoryWarning;
 - (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil OBJC_DESIGNATED_INITIALIZER;

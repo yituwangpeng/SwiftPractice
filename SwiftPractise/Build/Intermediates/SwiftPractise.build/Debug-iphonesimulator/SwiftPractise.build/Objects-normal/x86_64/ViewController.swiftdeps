@@ -6,40 +6,41 @@ provides-nominal:
 provides-member:
 - ["C13SwiftPractise14ViewController", ""]
 provides-dynamic-lookup:
-- "observeValue"
-- "pushButton"
-- "pushViewController"
-- "webView"
-- "viewDidLoad"
-- "createSubviews"
 - "didReceiveMemoryWarning"
 - "pView"
 - "loadRequest"
+- "webView"
+- "pushButton"
+- "viewDidLoad"
+- "observeValue"
+- "pushViewController"
+- "createSubviews"
 depends-top-level:
+- !private "UIColor"
+- "CastingPrecedence"
 - !private "=="
 - "AssignmentPrecedence"
-- "WKUIDelegate"
-- "CastingPrecedence"
-- !private "CGRect"
-- "UIViewController"
-- !private "WebDisplayViewController"
-- !private "WKWebViewConfiguration"
-- "UIProgressView"
-- !private "UIColor"
-- "WKNavigationDelegate"
-- "UnsafeMutableRawPointer"
-- !private "URLRequest"
-- "NSKeyValueChangeKey"
 - "URL"
-- !private "BooleanLiteralType"
-- "UIButton"
-- !private "Float"
-- !private "StringLiteralType"
-- "WKWebView"
-- "ViewController"
-- !private "-"
 - "String"
+- "WKUIDelegate"
+- !private "WKWebViewConfiguration"
+- "NSKeyValueChangeKey"
+- "UIViewController"
+- "UnsafeMutableRawPointer"
+- "WKNavigationDelegate"
+- "UIButton"
+- "WKWebView"
+- !private "-"
+- !private "Float"
+- !private "CGRect"
+- !private "BooleanLiteralType"
+- !private "URLRequest"
+- !private "StringLiteralType"
+- "ViewController"
+- "UIProgressView"
+- !private "WebDisplayViewController"
 depends-member:
+- !private ["Ps16AbsoluteValuable", "Stride"]
 - !private ["Ps9AnyObject", "CGRect"]
 - !private ["Ps9AnyObject", "UIButton"]
 - !private ["Ps9AnyObject", "UIColor"]
@@ -52,6 +53,7 @@ depends-member:
 - !private ["Ps9AnyObject", "addObserver"]
 - !private ["Ps9AnyObject", "addSubview"]
 - !private ["Ps9AnyObject", "addTarget"]
+- !private ["Ps9AnyObject", "blue"]
 - !private ["Ps9AnyObject", "clear"]
 - ["Ps9AnyObject", "createSubviews"]
 - ["Ps9AnyObject", "didReceiveMemoryWarning"]
@@ -72,6 +74,8 @@ depends-member:
 - ["Ps9AnyObject", "pushViewController"]
 - !private ["Ps9AnyObject", "red"]
 - !private ["Ps9AnyObject", "removeObserver"]
+- !private ["Ps9AnyObject", "setTitle"]
+- !private ["Ps9AnyObject", "setTitleColor"]
 - !private ["Ps9AnyObject", "trackTintColor"]
 - !private ["Ps9AnyObject", "uiDelegate"]
 - !private ["Ps9AnyObject", "view"]
@@ -81,6 +85,7 @@ depends-member:
 - ["Ps9AnyObject", "webViewDidClose"]
 - ["Ps9AnyObject", "webViewWebContentProcessDidTerminate"]
 - ["Ps9AnyObject", ""]
+- !private ["Ps19BinaryFloatingPoint", "Stride"]
 - !private ["Ps17BitwiseOperations", "IntegerLiteralType"]
 - !private ["Ps17BitwiseOperations", "Stride"]
 - !private ["Ps17BitwiseOperations", "_DisabledRangeIndex"]
@@ -97,8 +102,11 @@ depends-member:
 - !private ["PSo15CALayerDelegate", "progress"]
 - !private ["PSo15CALayerDelegate", "progressTintColor"]
 - !private ["PSo15CALayerDelegate", "removeObserver"]
+- !private ["PSo15CALayerDelegate", "setTitle"]
+- !private ["PSo15CALayerDelegate", "setTitleColor"]
 - !private ["PSo15CALayerDelegate", "trackTintColor"]
 - !private ["PSo15CALayerDelegate", "uiDelegate"]
+- !private ["V12CoreGraphics7CGFloat", "Stride"]
 - !private ["V12CoreGraphics7CGFloat", "deinit"]
 - !private ["VSC6CGRect", "deinit"]
 - !private ["VSC6CGRect", "init"]
@@ -124,6 +132,7 @@ depends-member:
 - !private ["Ps7CVarArg", "addObserver"]
 - !private ["Ps7CVarArg", "addSubview"]
 - !private ["Ps7CVarArg", "addTarget"]
+- !private ["Ps7CVarArg", "blue"]
 - !private ["Ps7CVarArg", "clear"]
 - ["Ps7CVarArg", "createSubviews"]
 - ["Ps7CVarArg", "didReceiveMemoryWarning"]
@@ -144,6 +153,8 @@ depends-member:
 - ["Ps7CVarArg", "pushViewController"]
 - !private ["Ps7CVarArg", "red"]
 - !private ["Ps7CVarArg", "removeObserver"]
+- !private ["Ps7CVarArg", "setTitle"]
+- !private ["Ps7CVarArg", "setTitleColor"]
 - !private ["Ps7CVarArg", "subscript"]
 - !private ["Ps7CVarArg", "trackTintColor"]
 - !private ["Ps7CVarArg", "uiDelegate"]
@@ -169,6 +180,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "CGRect"]
 - !private ["Ps28CustomDebugStringConvertible", "Index"]
 - !private ["Ps28CustomDebugStringConvertible", "IndexDistance"]
+- !private ["Ps28CustomDebugStringConvertible", "Stride"]
 - !private ["Ps28CustomDebugStringConvertible", "SubSequence"]
 - !private ["Ps28CustomDebugStringConvertible", "UIButton"]
 - !private ["Ps28CustomDebugStringConvertible", "UIColor"]
@@ -182,6 +194,7 @@ depends-member:
 - !private ["Ps28CustomDebugStringConvertible", "addObserver"]
 - !private ["Ps28CustomDebugStringConvertible", "addSubview"]
 - !private ["Ps28CustomDebugStringConvertible", "addTarget"]
+- !private ["Ps28CustomDebugStringConvertible", "blue"]
 - !private ["Ps28CustomDebugStringConvertible", "clear"]
 - ["Ps28CustomDebugStringConvertible", "createSubviews"]
 - ["Ps28CustomDebugStringConvertible", "didReceiveMemoryWarning"]
@@ -204,6 +217,8 @@ depends-member:
 - ["Ps28CustomDebugStringConvertible", "pushViewController"]
 - !private ["Ps28CustomDebugStringConvertible", "red"]
 - !private ["Ps28CustomDebugStringConvertible", "removeObserver"]
+- !private ["Ps28CustomDebugStringConvertible", "setTitle"]
+- !private ["Ps28CustomDebugStringConvertible", "setTitleColor"]
 - !private ["Ps28CustomDebugStringConvertible", "size"]
 - ["Ps28CustomDebugStringConvertible", "some"]
 - !private ["Ps28CustomDebugStringConvertible", "subscript"]
@@ -260,6 +275,7 @@ depends-member:
 - !private ["Ps23CustomStringConvertible", "addObserver"]
 - !private ["Ps23CustomStringConvertible", "addSubview"]
 - !private ["Ps23CustomStringConvertible", "addTarget"]
+- !private ["Ps23CustomStringConvertible", "blue"]
 - !private ["Ps23CustomStringConvertible", "clear"]
 - ["Ps23CustomStringConvertible", "createSubviews"]
 - ["Ps23CustomStringConvertible", "didReceiveMemoryWarning"]
@@ -281,6 +297,8 @@ depends-member:
 - ["Ps23CustomStringConvertible", "pushViewController"]
 - !private ["Ps23CustomStringConvertible", "red"]
 - !private ["Ps23CustomStringConvertible", "removeObserver"]
+- !private ["Ps23CustomStringConvertible", "setTitle"]
+- !private ["Ps23CustomStringConvertible", "setTitleColor"]
 - !private ["Ps23CustomStringConvertible", "subscript"]
 - !private ["Ps23CustomStringConvertible", "trackTintColor"]
 - !private ["Ps23CustomStringConvertible", "uiDelegate"]
@@ -299,6 +317,8 @@ depends-member:
 - !private ["Vs10Dictionary", "subscript"]
 - !private ["Vs15DictionaryIndex", "deinit"]
 - !private ["Vs15DictionaryIndex", "newKey"]
+- !private ["Sd", "Stride"]
+- !private ["Sd", "deinit"]
 - !private ["Ps9Equatable", "CGRect"]
 - !private ["Ps9Equatable", "IntegerLiteralType"]
 - !private ["Ps9Equatable", "Stride"]
@@ -315,9 +335,10 @@ depends-member:
 - !private ["Ps9Equatable", "addObserver"]
 - !private ["Ps9Equatable", "addSubview"]
 - !private ["Ps9Equatable", "addTarget"]
+- !private ["Ps9Equatable", "blue"]
 - !private ["Ps9Equatable", "clear"]
-- !private ["Ps9Equatable", "contactAdd"]
 - ["Ps9Equatable", "createSubviews"]
+- !private ["Ps9Equatable", "custom"]
 - !private ["Ps9Equatable", "default"]
 - ["Ps9Equatable", "didReceiveMemoryWarning"]
 - !private ["Ps9Equatable", "frame"]
@@ -329,6 +350,7 @@ depends-member:
 - !private ["Ps9Equatable", "navigationDelegate"]
 - !private ["Ps9Equatable", "new"]
 - !private ["Ps9Equatable", "newKey"]
+- !private ["Ps9Equatable", "normal"]
 - ["Ps9Equatable", "observeValue"]
 - ["Ps9Equatable", "pView"]
 - ["Ps9Equatable", "pView.storage"]
@@ -340,6 +362,8 @@ depends-member:
 - ["Ps9Equatable", "pushViewController"]
 - !private ["Ps9Equatable", "red"]
 - !private ["Ps9Equatable", "removeObserver"]
+- !private ["Ps9Equatable", "setTitle"]
+- !private ["Ps9Equatable", "setTitleColor"]
 - !private ["Ps9Equatable", "size"]
 - !private ["Ps9Equatable", "touchUpInside"]
 - !private ["Ps9Equatable", "trackTintColor"]
@@ -353,6 +377,7 @@ depends-member:
 - !private ["Ps9Equatable", "width"]
 - ["Ps9Equatable", ""]
 - !private ["Ps25ExpressibleByArrayLiteral", "new"]
+- !private ["Ps25ExpressibleByArrayLiteral", "normal"]
 - !private ["Ps25ExpressibleByArrayLiteral", "touchUpInside"]
 - !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "Index"]
@@ -361,6 +386,7 @@ depends-member:
 - !private ["Ps30ExpressibleByDictionaryLiteral", "_Element"]
 - !private ["Ps30ExpressibleByDictionaryLiteral", "subscript"]
 - !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps25ExpressibleByFloatLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
 - !private ["Ps27ExpressibleByIntegerLiteral", "_DisabledRangeIndex"]
@@ -369,6 +395,7 @@ depends-member:
 - !private ["Ps26ExpressibleByStringLiteral", "init"]
 - !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - ["Sf", "deinit"]
+- !private ["Ps13FloatingPoint", "Stride"]
 - !private ["Ps8Hashable", "CGRect"]
 - !private ["Ps8Hashable", "IntegerLiteralType"]
 - !private ["Ps8Hashable", "Stride"]
@@ -385,9 +412,10 @@ depends-member:
 - !private ["Ps8Hashable", "addObserver"]
 - !private ["Ps8Hashable", "addSubview"]
 - !private ["Ps8Hashable", "addTarget"]
+- !private ["Ps8Hashable", "blue"]
 - !private ["Ps8Hashable", "clear"]
-- !private ["Ps8Hashable", "contactAdd"]
 - ["Ps8Hashable", "createSubviews"]
+- !private ["Ps8Hashable", "custom"]
 - !private ["Ps8Hashable", "default"]
 - ["Ps8Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps8Hashable", "frame"]
@@ -408,6 +436,8 @@ depends-member:
 - ["Ps8Hashable", "pushViewController"]
 - !private ["Ps8Hashable", "red"]
 - !private ["Ps8Hashable", "removeObserver"]
+- !private ["Ps8Hashable", "setTitle"]
+- !private ["Ps8Hashable", "setTitleColor"]
 - !private ["Ps8Hashable", "trackTintColor"]
 - !private ["Ps8Hashable", "uiDelegate"]
 - !private ["Ps8Hashable", "view"]
@@ -441,6 +471,7 @@ depends-member:
 - !private ["Ps17IntegerArithmetic", "Stride"]
 - !private ["Ps17IntegerArithmetic", "_DisabledRangeIndex"]
 - !private ["Ps16IteratorProtocol", "Element"]
+- !private ["Ps25LosslessStringConvertible", "Stride"]
 - !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
 - !private ["Ps25LosslessStringConvertible", "init"]
 - !private ["Ps10MirrorPath", "IntegerLiteralType"]
@@ -460,6 +491,7 @@ depends-member:
 - !private ["PSo8NSCoding", "addObserver"]
 - !private ["PSo8NSCoding", "addSubview"]
 - !private ["PSo8NSCoding", "addTarget"]
+- !private ["PSo8NSCoding", "blue"]
 - !private ["PSo8NSCoding", "clear"]
 - ["PSo8NSCoding", "createSubviews"]
 - ["PSo8NSCoding", "didReceiveMemoryWarning"]
@@ -480,6 +512,8 @@ depends-member:
 - ["PSo8NSCoding", "pushViewController"]
 - !private ["PSo8NSCoding", "red"]
 - !private ["PSo8NSCoding", "removeObserver"]
+- !private ["PSo8NSCoding", "setTitle"]
+- !private ["PSo8NSCoding", "setTitleColor"]
 - !private ["PSo8NSCoding", "trackTintColor"]
 - !private ["PSo8NSCoding", "uiDelegate"]
 - !private ["PSo8NSCoding", "view"]
@@ -489,6 +523,7 @@ depends-member:
 - ["PSo8NSCoding", "webViewDidClose"]
 - ["PSo8NSCoding", "webViewWebContentProcessDidTerminate"]
 - ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "blue"]
 - !private ["PSo9NSCopying", "clear"]
 - !private ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "red"]
@@ -540,6 +575,7 @@ depends-member:
 - !private ["CSo8NSObject", "addObserver"]
 - !private ["CSo8NSObject", "addSubview"]
 - !private ["CSo8NSObject", "addTarget"]
+- !private ["CSo8NSObject", "blue"]
 - !private ["CSo8NSObject", "clear"]
 - ["CSo8NSObject", "createSubviews"]
 - ["CSo8NSObject", "didReceiveMemoryWarning"]
@@ -560,6 +596,8 @@ depends-member:
 - ["CSo8NSObject", "pushViewController"]
 - !private ["CSo8NSObject", "red"]
 - !private ["CSo8NSObject", "removeObserver"]
+- !private ["CSo8NSObject", "setTitle"]
+- !private ["CSo8NSObject", "setTitleColor"]
 - !private ["CSo8NSObject", "trackTintColor"]
 - !private ["CSo8NSObject", "uiDelegate"]
 - !private ["CSo8NSObject", "view"]
@@ -580,6 +618,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "addObserver"]
 - !private ["PSo16NSObjectProtocol", "addSubview"]
 - !private ["PSo16NSObjectProtocol", "addTarget"]
+- !private ["PSo16NSObjectProtocol", "blue"]
 - !private ["PSo16NSObjectProtocol", "clear"]
 - ["PSo16NSObjectProtocol", "createSubviews"]
 - ["PSo16NSObjectProtocol", "didReceiveMemoryWarning"]
@@ -600,6 +639,8 @@ depends-member:
 - ["PSo16NSObjectProtocol", "pushViewController"]
 - !private ["PSo16NSObjectProtocol", "red"]
 - !private ["PSo16NSObjectProtocol", "removeObserver"]
+- !private ["PSo16NSObjectProtocol", "setTitle"]
+- !private ["PSo16NSObjectProtocol", "setTitleColor"]
 - !private ["PSo16NSObjectProtocol", "trackTintColor"]
 - !private ["PSo16NSObjectProtocol", "uiDelegate"]
 - !private ["PSo16NSObjectProtocol", "view"]
@@ -609,19 +650,22 @@ depends-member:
 - ["PSo16NSObjectProtocol", "webViewDidClose"]
 - ["PSo16NSObjectProtocol", "webViewWebContentProcessDidTerminate"]
 - ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "blue"]
 - !private ["PSo14NSSecureCoding", "clear"]
 - !private ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "red"]
 - !private ["CSo8NSString", "init"]
 - !private ["Ps9OptionSet", "new"]
+- !private ["Ps9OptionSet", "normal"]
 - !private ["Ps9OptionSet", "touchUpInside"]
 - ["Sq", "deinit"]
 - ["Sq", "some"]
 - !private ["Vs5Range", "newKey"]
-- !private ["Ps16RawRepresentable", "contactAdd"]
+- !private ["Ps16RawRepresentable", "custom"]
 - !private ["Ps16RawRepresentable", "default"]
 - !private ["Ps16RawRepresentable", "new"]
 - !private ["Ps16RawRepresentable", "newKey"]
+- !private ["Ps16RawRepresentable", "normal"]
 - !private ["Ps16RawRepresentable", "touchUpInside"]
 - !private ["P10Foundation20ReferenceConvertible", "init"]
 - !private ["V10ObjectiveC8Selector", "deinit"]
@@ -633,6 +677,7 @@ depends-member:
 - !private ["Ps8Sequence", "_Element"]
 - !private ["Ps8Sequence", "subscript"]
 - !private ["Ps10SetAlgebra", "new"]
+- !private ["Ps10SetAlgebra", "normal"]
 - !private ["Ps10SetAlgebra", "touchUpInside"]
 - !private ["Ps13SignedInteger", "IntegerLiteralType"]
 - !private ["Ps13SignedInteger", "Stride"]
@@ -662,6 +707,8 @@ depends-member:
 - !private ["PSo29UIAccessibilityIdentification", "progress"]
 - !private ["PSo29UIAccessibilityIdentification", "progressTintColor"]
 - !private ["PSo29UIAccessibilityIdentification", "removeObserver"]
+- !private ["PSo29UIAccessibilityIdentification", "setTitle"]
+- !private ["PSo29UIAccessibilityIdentification", "setTitleColor"]
 - !private ["PSo29UIAccessibilityIdentification", "trackTintColor"]
 - !private ["PSo29UIAccessibilityIdentification", "uiDelegate"]
 - !private ["PSo12UIAppearance", "addObserver"]
@@ -675,6 +722,8 @@ depends-member:
 - !private ["PSo12UIAppearance", "progress"]
 - !private ["PSo12UIAppearance", "progressTintColor"]
 - !private ["PSo12UIAppearance", "removeObserver"]
+- !private ["PSo12UIAppearance", "setTitle"]
+- !private ["PSo12UIAppearance", "setTitleColor"]
 - !private ["PSo12UIAppearance", "trackTintColor"]
 - !private ["PSo12UIAppearance", "uiDelegate"]
 - !private ["PSo21UIAppearanceContainer", "CGRect"]
@@ -707,6 +756,8 @@ depends-member:
 - ["PSo21UIAppearanceContainer", "pushButton.storage"]
 - ["PSo21UIAppearanceContainer", "pushViewController"]
 - !private ["PSo21UIAppearanceContainer", "removeObserver"]
+- !private ["PSo21UIAppearanceContainer", "setTitle"]
+- !private ["PSo21UIAppearanceContainer", "setTitleColor"]
 - !private ["PSo21UIAppearanceContainer", "trackTintColor"]
 - !private ["PSo21UIAppearanceContainer", "uiDelegate"]
 - !private ["PSo21UIAppearanceContainer", "view"]
@@ -720,8 +771,11 @@ depends-member:
 - ["CSo8UIButton", "deinit"]
 - !private ["CSo8UIButton", "frame"]
 - !private ["CSo8UIButton", "init"]
-- !private ["OSC12UIButtonType", "contactAdd"]
+- !private ["CSo8UIButton", "setTitle"]
+- !private ["CSo8UIButton", "setTitleColor"]
+- !private ["OSC12UIButtonType", "custom"]
 - !private ["OSC12UIButtonType", "deinit"]
+- !private ["CSo7UIColor", "blue"]
 - !private ["CSo7UIColor", "clear"]
 - !private ["CSo7UIColor", "deinit"]
 - !private ["CSo7UIColor", "red"]
@@ -755,8 +809,12 @@ depends-member:
 - !private ["CSo9UIControl", "addTarget"]
 - !private ["CSo9UIControl", "frame"]
 - !private ["CSo9UIControl", "init"]
+- !private ["CSo9UIControl", "setTitle"]
+- !private ["CSo9UIControl", "setTitleColor"]
 - !private ["VSC15UIControlEvents", "deinit"]
 - !private ["VSC15UIControlEvents", "touchUpInside"]
+- !private ["VSC14UIControlState", "deinit"]
+- !private ["VSC14UIControlState", "normal"]
 - !private ["PSo17UICoordinateSpace", "addObserver"]
 - !private ["PSo17UICoordinateSpace", "addSubview"]
 - !private ["PSo17UICoordinateSpace", "addTarget"]
@@ -768,6 +826,8 @@ depends-member:
 - !private ["PSo17UICoordinateSpace", "progress"]
 - !private ["PSo17UICoordinateSpace", "progressTintColor"]
 - !private ["PSo17UICoordinateSpace", "removeObserver"]
+- !private ["PSo17UICoordinateSpace", "setTitle"]
+- !private ["PSo17UICoordinateSpace", "setTitleColor"]
 - !private ["PSo17UICoordinateSpace", "trackTintColor"]
 - !private ["PSo17UICoordinateSpace", "uiDelegate"]
 - !private ["PSo13UIDynamicItem", "addObserver"]
@@ -781,6 +841,8 @@ depends-member:
 - !private ["PSo13UIDynamicItem", "progress"]
 - !private ["PSo13UIDynamicItem", "progressTintColor"]
 - !private ["PSo13UIDynamicItem", "removeObserver"]
+- !private ["PSo13UIDynamicItem", "setTitle"]
+- !private ["PSo13UIDynamicItem", "setTitleColor"]
 - !private ["PSo13UIDynamicItem", "trackTintColor"]
 - !private ["PSo13UIDynamicItem", "uiDelegate"]
 - !private ["PSo18UIFocusEnvironment", "CGRect"]
@@ -813,6 +875,8 @@ depends-member:
 - ["PSo18UIFocusEnvironment", "pushButton.storage"]
 - ["PSo18UIFocusEnvironment", "pushViewController"]
 - !private ["PSo18UIFocusEnvironment", "removeObserver"]
+- !private ["PSo18UIFocusEnvironment", "setTitle"]
+- !private ["PSo18UIFocusEnvironment", "setTitleColor"]
 - !private ["PSo18UIFocusEnvironment", "trackTintColor"]
 - !private ["PSo18UIFocusEnvironment", "uiDelegate"]
 - !private ["PSo18UIFocusEnvironment", "view"]
@@ -833,6 +897,8 @@ depends-member:
 - !private ["PSo11UIFocusItem", "progress"]
 - !private ["PSo11UIFocusItem", "progressTintColor"]
 - !private ["PSo11UIFocusItem", "removeObserver"]
+- !private ["PSo11UIFocusItem", "setTitle"]
+- !private ["PSo11UIFocusItem", "setTitleColor"]
 - !private ["PSo11UIFocusItem", "trackTintColor"]
 - !private ["PSo11UIFocusItem", "uiDelegate"]
 - ["CSo14UIProgressView", "deinit"]
@@ -878,6 +944,8 @@ depends-member:
 - ["CSo11UIResponder", "pushButton.storage"]
 - ["CSo11UIResponder", "pushViewController"]
 - !private ["CSo11UIResponder", "removeObserver"]
+- !private ["CSo11UIResponder", "setTitle"]
+- !private ["CSo11UIResponder", "setTitleColor"]
 - !private ["CSo11UIResponder", "trackTintColor"]
 - !private ["CSo11UIResponder", "uiDelegate"]
 - !private ["CSo11UIResponder", "view"]
@@ -916,6 +984,8 @@ depends-member:
 - ["PSo30UIResponderStandardEditActions", "pushButton.storage"]
 - ["PSo30UIResponderStandardEditActions", "pushViewController"]
 - !private ["PSo30UIResponderStandardEditActions", "removeObserver"]
+- !private ["PSo30UIResponderStandardEditActions", "setTitle"]
+- !private ["PSo30UIResponderStandardEditActions", "setTitleColor"]
 - !private ["PSo30UIResponderStandardEditActions", "trackTintColor"]
 - !private ["PSo30UIResponderStandardEditActions", "uiDelegate"]
 - !private ["PSo30UIResponderStandardEditActions", "view"]
@@ -982,6 +1052,8 @@ depends-member:
 - ["PSo18UITraitEnvironment", "pushButton.storage"]
 - ["PSo18UITraitEnvironment", "pushViewController"]
 - !private ["PSo18UITraitEnvironment", "removeObserver"]
+- !private ["PSo18UITraitEnvironment", "setTitle"]
+- !private ["PSo18UITraitEnvironment", "setTitleColor"]
 - !private ["PSo18UITraitEnvironment", "trackTintColor"]
 - !private ["PSo18UITraitEnvironment", "uiDelegate"]
 - !private ["PSo18UITraitEnvironment", "view"]
@@ -1002,6 +1074,8 @@ depends-member:
 - !private ["CSo6UIView", "progress"]
 - !private ["CSo6UIView", "progressTintColor"]
 - !private ["CSo6UIView", "removeObserver"]
+- !private ["CSo6UIView", "setTitle"]
+- !private ["CSo6UIView", "setTitleColor"]
 - !private ["CSo6UIView", "trackTintColor"]
 - !private ["CSo6UIView", "uiDelegate"]
 - !private ["CSo16UIViewController", "CGRect"]
@@ -1124,6 +1198,8 @@ depends-member:
 - !private ["CSo22WKWebViewConfiguration", "init"]
 - ["C13SwiftPractise24WebDisplayViewController", "deinit"]
 - !private ["C13SwiftPractise24WebDisplayViewController", "init"]
+- !private ["Ps15_CVarArgAligned", "Stride"]
+- !private ["Ps22_CVarArgPassedAsDouble", "Stride"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addObserver"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addSubview"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "addTarget"]
@@ -1135,16 +1211,20 @@ depends-member:
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "progress"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "progressTintColor"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "removeObserver"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "setTitle"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "setTitleColor"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "trackTintColor"]
 - !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "uiDelegate"]
 - !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
 - !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps33_ExpressibleByBuiltinFloatLiteral", "Stride"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "IntegerLiteralType"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
 - !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "_DisabledRangeIndex"]
 - !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
 - !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
 - !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps26_ExpressibleByColorLiteral", "blue"]
 - !private ["Ps26_ExpressibleByColorLiteral", "clear"]
 - !private ["Ps26_ExpressibleByColorLiteral", "red"]
 - !private ["Ps34_ExpressibleByFileReferenceLiteral", "init"]
@@ -1165,9 +1245,10 @@ depends-member:
 - !private ["Ps9_Hashable", "addObserver"]
 - !private ["Ps9_Hashable", "addSubview"]
 - !private ["Ps9_Hashable", "addTarget"]
+- !private ["Ps9_Hashable", "blue"]
 - !private ["Ps9_Hashable", "clear"]
-- !private ["Ps9_Hashable", "contactAdd"]
 - ["Ps9_Hashable", "createSubviews"]
+- !private ["Ps9_Hashable", "custom"]
 - !private ["Ps9_Hashable", "default"]
 - ["Ps9_Hashable", "didReceiveMemoryWarning"]
 - !private ["Ps9_Hashable", "frame"]
@@ -1188,6 +1269,8 @@ depends-member:
 - ["Ps9_Hashable", "pushViewController"]
 - !private ["Ps9_Hashable", "red"]
 - !private ["Ps9_Hashable", "removeObserver"]
+- !private ["Ps9_Hashable", "setTitle"]
+- !private ["Ps9_Hashable", "setTitleColor"]
 - !private ["Ps9_Hashable", "trackTintColor"]
 - !private ["Ps9_Hashable", "uiDelegate"]
 - !private ["Ps9_Hashable", "view"]
@@ -1226,7 +1309,9 @@ depends-member:
 - !private ["Ps11_Strideable", "_DisabledRangeIndex"]
 - !private ["Ps20_SwiftNewtypeWrapper", "newKey"]
 depends-nominal:
+- !private "Ps16AbsoluteValuable"
 - "Ps9AnyObject"
+- !private "Ps19BinaryFloatingPoint"
 - !private "Ps17BitwiseOperations"
 - "Sb"
 - !private "PSo15CALayerDelegate"
@@ -1243,17 +1328,20 @@ depends-nominal:
 - "Ps23CustomStringConvertible"
 - "Vs10Dictionary"
 - !private "Vs15DictionaryIndex"
+- !private "Sd"
 - "Ps9Equatable"
 - !private "Ps25ExpressibleByArrayLiteral"
 - !private "Ps27ExpressibleByBooleanLiteral"
 - !private "Ps30ExpressibleByDictionaryLiteral"
 - !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps25ExpressibleByFloatLiteral"
 - !private "Ps27ExpressibleByIntegerLiteral"
 - "Ps23ExpressibleByNilLiteral"
 - !private "Ps32ExpressibleByStringInterpolation"
 - !private "Ps26ExpressibleByStringLiteral"
 - !private "Ps33ExpressibleByUnicodeScalarLiteral"
 - "Sf"
+- !private "Ps13FloatingPoint"
 - "Ps8Hashable"
 - !private "Ps9Indexable"
 - !private "Ps13IndexableBase"
@@ -1299,6 +1387,7 @@ depends-nominal:
 - "PSo18UIContentContainer"
 - !private "CSo9UIControl"
 - !private "VSC15UIControlEvents"
+- !private "VSC14UIControlState"
 - !private "PSo17UICoordinateSpace"
 - !private "PSo13UIDynamicItem"
 - "PSo18UIFocusEnvironment"
@@ -1319,9 +1408,12 @@ depends-nominal:
 - "CSo9WKWebView"
 - !private "CSo22WKWebViewConfiguration"
 - "C13SwiftPractise24WebDisplayViewController"
+- !private "Ps15_CVarArgAligned"
+- !private "Ps22_CVarArgPassedAsDouble"
 - !private "Ps37_DefaultCustomPlaygroundQuickLookable"
 - !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
 - !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps33_ExpressibleByBuiltinFloatLiteral"
 - !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
 - !private "Ps34_ExpressibleByBuiltinStringLiteral"
 - !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
@@ -1349,4 +1441,4 @@ depends-external:
 - "/Applications/Xcode 8.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
 - "/Applications/Xcode 8.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode 8.0.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
-interface-hash: "1192228dc7c120f1ef08e5b0a37a0916"
+interface-hash: "e78fcede2eaca927d1a80116aeed14d1"
