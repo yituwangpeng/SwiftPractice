@@ -1,0 +1,7 @@
+version: "Apple Swift version 3.0 (swiftlang-800.0.46.2 clang-800.0.38)"
+options: "af171eb391a38cfbaacbb4b79fae6097"
+build_time: [530330552, 477766000]
+inputs:
+  "/Users/yituwangpeng/Desktop/SwiftPractise/SwiftPractise/ViewController.swift": [530330552, 0]
+  "/Users/yituwangpeng/Desktop/SwiftPractise/SwiftPractise/WebDisplayViewController.swift": [530274607, 0]
+  "/Users/yituwangpeng/Desktop/SwiftPractise/SwiftPractise/AppDelegate.swift": [530244833, 0]
