@@ -9,105 +9,153 @@
 import UIKit
 import WebKit
 
-class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate {
-
-    // MARK: - Properties
-    lazy var webView: WKWebView = {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, URLSessionDelegate {
+    
+    // MARK: - CollectionView
+    lazy var collectionView: UICollectionView = {
         
-        let configuretion: WKWebViewConfiguration = WKWebViewConfiguration.init()
+        let collection: UICollectionView = UICollectionView.init(frame: CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height), collectionViewLayout: UICollectionViewFlowLayout())
+        collection.backgroundColor = UIColor.white
+        collection.delegate = self
+        collection.dataSource = self
+        collection.register(VideoListCell.self, forCellWithReuseIdentifier: "videoListCell")
+        return collection
         
-        let webView: WKWebView = WKWebView.init(frame: CGRect.init(x: 0, y: 20, width: self.view.frame.size.width, height: self.view.frame.size.height - 20), configuration: configuretion)
-        webView.uiDelegate = self
-        webView.navigationDelegate = self
-        
-        return webView
     }()
     
-
-    lazy var pView: UIProgressView = {
-        let progressView = UIProgressView.init(progressViewStyle: .default)
-        progressView.progressTintColor = UIColor.red
-        progressView.trackTintColor = UIColor.clear
-        var width = self.view.frame.size.width
-        progressView.frame = CGRect.init(x: 0, y: 20, width: width, height: 3)
+    // MARK: - datasource
+    lazy var dataSource: NSMutableArray = {
+        let datas = NSMutableArray.init(capacity: 1)
+        return datas
         
-        // kvo 监听webview加载进度KVO 是基于 KVC (Key-Value Coding) 以及动态派发技术实现的，而这些东西都是 Objective-C 运行时的概念。另外由于 Swift 为了效率，默认禁用了动态派发，因此想用 Swift 来实现 KVO，我们还需要做额外的工作，那就是将想要观测的对象标记为 dynamic。
-        self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil);
-
-        return progressView;
     }()
-    
-    // MARK: - button add target
-    lazy var pushButton: UIButton = {
-        let button = UIButton.init(type: .custom)
-        button.frame = CGRect.init(x: self.view.frame.size.width - 100, y: 50, width: 100, height: 100)
-        button.addTarget(self, action: #selector(self.pushViewController), for: .touchUpInside)
-        button.setTitle("Add", for: .normal)
-        button.setTitleColor(UIColor.blue, for: .normal)
-        return button;
-    }()
-
-    // MARK: - KVO Callback
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let change = change {
-            let a = change[.newKey] as! Float
-            
-            if a == 1 {
-                self.pView.progress = a
-                self.pView.isHidden = true
-            } else {
-                self.pView.isHidden = false
-                self.pView.progress = a
-            }
-
-         }
-
-    }
-    
-    // MARK: -Events
-    func pushViewController() {
-        
-        let vc = WebDisplayViewController.init()
-        
-        self.present(vc, animated: true) { 
-            
-        }
-        
-    }
+ 
     // MARK: - Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.createSubviews()
         
-        let urlString = "https://www.baidu.com"
+//        //读取json数据
+//        let filePath: String = Bundle.main.path(forResource: "video", ofType: "json")!
+//        let data: Data = NSData.init(contentsOfFile: filePath) as! Data
         
-        self.loadRequest(url: URL.init(string: urlString)!)
-        
-    }
-
-    func createSubviews() {
-        
-        self.view.addSubview(self.webView)
-        
-        self.view.addSubview(self.pView)
-
-        self.view.addSubview(self.pushButton)
+        fetchData()
     }
     
-    func loadRequest(url: URL) -> () {
-        let request = URLRequest.init(url: url)
-        self.webView.load(request)
+    func createSubviews() {
+        
+         self.view.addSubview(collectionView)
+    }
+    
+    func fetchData() -> () {
+        let url = URL.init(string: "https://open.qyer.com/plan/video/list")
+        let request = URLRequest.init(url: url!)
+        let config = URLSessionConfiguration.default
+        
+        let session = URLSession.init(configuration: config, delegate: self, delegateQueue: OperationQueue.main)
+        
+        let sessionTask = session.dataTask(with: request, completionHandler:{ (data, response, error) -> Void in
+            
+            //现在dic 是两重Optional
+            var dic = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject]
+            
+            if let dict = dic {
+                
+                NSLog("response ======== %@", dict ?? "")
+                
+                let datas = dict?["data"] as? [[String: AnyObject]]
+                
+                for obj in datas! {
+                    var dict: [String: AnyObject] = obj
+                    
+                    var model = videoModel()
+                    model.title = dict["title"] as! String
+                    model.cover = dict["cover"] as! String
+                    model.url = dict["url"] as! String
+                    self.dataSource.add(model)
+                    
+                }
+                
+                self.collectionView.reloadData()
+            }
+//            do {
+//                let dict = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? [String: AnyObject]
+//                
+//                NSLog("response ======== %@", dict ?? "")
+//                
+//                let datas = dict?["data"] as? [[String: AnyObject]]
+//            
+//                for obj in datas! {
+//                    var dict: [String: AnyObject] = obj
+//                    
+//                    var model = videoModel()
+//                    model.title = dict["title"] as! String
+//                    model.cover = dict["cover"] as! String
+//                    model.url = dict["url"] as! String
+//                    self.dataSource.add(model)
+//                    
+//                }
+//                
+//                self.collectionView.reloadData()
+//
+//            } catch let aError as NSError {
+//                
+//            }
+        })
+        
+        sessionTask.resume()
+    }
+    
+    // MARK: - collecitionView delegate & datasource
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.dataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoListCell", for: indexPath) as! VideoListCell
+        cell.setData(data: dataSource[indexPath.row] as! videoModel)
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var model = self.dataSource[indexPath.row] as! videoModel
+        
+        let vc = WebDisplayViewController.init()
+        vc.originUrlStr = model.url
+        
+        self.present(vc, animated: true) {
+            
+        }
+    }
+
+    // MARK: - collectonView layout delegate
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets{
+           return UIEdgeInsetsMake(15, 15, 15, 15)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        var width = (self.view.frame.size.width - 15*2 - 15)/2
+        var height = width*1.5
+        
+        return CGSize.init(width: width, height: height)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     deinit {
-        self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
+        
     }
-
+    
 }
 
